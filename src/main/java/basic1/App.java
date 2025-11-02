@@ -1,13 +1,18 @@
 package basic1;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 /**
- * Hello world!
- *
+ * Simple app to print current date and time
  */
 public class App 
 {
-    public static void main( String[] args )
+    public static void main(String[] args)
     {
-        System.out.println( "Hello World!" );
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        String formattedNow = now.format(formatter);
+        System.out.println("Current date and time: " + formattedNow);
     }
 }
